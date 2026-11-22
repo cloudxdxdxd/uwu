@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UWU — Hello Kitty Ribbon Club &amp; Keepsake Archive</title>
+    <meta
+      name="description"
+      content="Hello Kitty ribbon collective roster, kawaii photocard gallery, and interactive music box archive."
+    />
+    <meta property="og:title" content="UWU — Hello Kitty Ribbon Club &amp; Keepsake Archive" />
+    <meta
+      property="og:description"
+      content="Hello Kitty ribbon collective roster, kawaii photocard gallery, and interactive music box archive."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.youtube.com" />
+    <link rel="preconnect" href="https://i.ytimg.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=IBM+Plex+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <!-- Hello Kitty Keepsake Loading Curtain -->
+    <div
+      id="loading-screen"
+      role="status"
+      aria-live="polite"
+      aria-label="Loading UWU"
+      class="loading-screen"
+    >
+      <div aria-hidden="true" class="gingham-weave loading-gingham"></div>
+      <div aria-hidden="true" class="pastel-vignette loading-vignette"></div>
+
+      <div class="loading-inner">
+        <div id="intro-image-wrap" class="intro-image-wrap"></div>
+
+        <div class="loading-wordmark-wrap">
+          <img
+            src="/assets/aistudio/image_f1a261de.png"
+            alt=""
+            aria-hidden="true"
+            decoding="async"
+            class="loading-wordmark-img"
+          />
+        </div>
+
+        <div class="loading-progress-wrap">
+          <div class="loading-track">
+            <div id="loader-bar" class="loading-bar"></div>
+          </div>
+          <div class="loading-meta">
+            <span>Opening Ribbon Box</span>
+            <span id="loader-percent" class="tabular-nums">0%</span>
+          </div>
+        </div>
+
+        <button id="loader-skip" type="button" class="loading-skip-btn">Skip</button>
+      </div>
+    </div>
+
+    <!-- Fixed Soft Gingham & Hello Kitty Bow Stationery Backdrop -->
+    <div aria-hidden="true" class="backdrop-atmosphere">
+      <div class="gingham-weave backdrop-gingham"></div>
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" class="backdrop-svg">
+        <defs>
+          <radialGradient id="softBlushOrb1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffd1e2" stop-opacity="0.65" />
+            <stop offset="100%" stop-color="#fff8fa" stop-opacity="0" />
+          </radialGradient>
+          <radialGradient id="softBlushOrb2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffe7b8" stop-opacity="0.45" />
+            <stop offset="100%" stop-color="#fff8fa" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <circle cx="240" cy="200" r="320" fill="url(#softBlushOrb1)" />
+        <circle cx="1220" cy="240" r="280" fill="url(#softBlushOrb2)" />
+        <circle cx="1140" cy="740" r="340" fill="url(#softBlushOrb1)" />
+
+        <!-- Subtle Scattered Satin Bows & Hearts -->
+        <g opacity="0.16" fill="#e61e5a" stroke="#4a1829" stroke-width="1.5">
+          <g transform="translate(150, 260) rotate(-14) scale(0.9)">
+            <path d="M-20,-8 C-26,-14 -28,-4 -24,6 C-20,14 -10,12 -4,4 L-4,-4 C-8,-10 -14,-12 -20,-8 Z" />
+            <path d="M20,-8 C26,-14 28,-4 24,6 C20,14 10,12 4,4 L4,-4 C8,-10 14,-12 20,-8 Z" />
+            <circle cx="0" cy="0" r="6" fill="#ff7aa6" />
+          </g>
+          <g transform="translate(1280, 190) rotate(16) scale(0.85)">
+            <path d="M-20,-8 C-26,-14 -28,-4 -24,6 C-20,14 -10,12 -4,4 L-4,-4 C-8,-10 -14,-12 -20,-8 Z" />
+            <path d="M20,-8 C26,-14 28,-4 24,6 C20,14 10,12 4,4 L4,-4 C8,-10 14,-12 20,-8 Z" />
+            <circle cx="0" cy="0" r="6" fill="#ff7aa6" />
+          </g>
+          <g transform="translate(1310, 640) rotate(-10) scale(0.8)">
+            <path d="M-20,-8 C-26,-14 -28,-4 -24,6 C-20,14 -10,12 -4,4 L-4,-4 C-8,-10 -14,-12 -20,-8 Z" />
+            <path d="M20,-8 C26,-14 28,-4 24,6 C20,14 10,12 4,4 L4,-4 C8,-10 14,-12 20,-8 Z" />
+            <circle cx="0" cy="0" r="6" fill="#ff7aa6" />
+          </g>
+          <g transform="translate(190, 720) rotate(12) scale(0.8)">
+            <path d="M-20,-8 C-26,-14 -28,-4 -24,6 C-20,14 -10,12 -4,4 L-4,-4 C-8,-10 -14,-12 -20,-8 Z" />
+            <path d="M20,-8 C26,-14 28,-4 24,6 C20,14 10,12 4,4 L4,-4 C8,-10 14,-12 20,-8 Z" />
+            <circle cx="0" cy="0" r="6" fill="#ff7aa6" />
+          </g>
+        </g>
+
+        <!-- Minimalist Kitty Ear Silhouette Motif -->
+        <g opacity="0.1" fill="#ffffff" stroke="#e61e5a" stroke-width="2">
+          <path d="M110,515 C110,470 140,455 162,485 C180,478 202,478 220,485 C242,455 272,470 272,515 C284,545 268,588 191,588 C114,588 98,545 110,515 Z" />
+          <path d="M1180,395 C1180,350 1210,335 1232,365 C1250,358 1272,358 1290,365 C1312,335 1342,350 1342,395 C1354,425 1338,468 1261,468 C1184,468 1168,425 1180,395 Z" />
+        </g>
+      </svg>
+      <div class="pastel-vignette backdrop-vignette"></div>
+    </div>
+
+    <!-- Main Page Shell -->
+    <div id="top" class="page-shell">
+      <header class="top-nav">
+        <div class="top-nav-inner">
+          <a href="#top" class="brand-link">UWU</a>
+
+          <nav aria-label="Primary navigation" class="primary-nav">
+            <a href="#roster" class="nav-link">Roster</a>
+            <a href="#hall-of-fame" class="nav-link">Hall of Fame</a>
+          </nav>
+
+          <div class="nav-action-wrap">
+            <a href="#hall-of-fame" class="nav-cta">Hall of Fame</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="main-content">
+        <!-- UWU Hero Emblem -->
+        <div class="hero-wordmark">
+          <h1 class="sr-only">UWU</h1>
+          <div class="hero-wordmark-halo">
+            <img
+              src="/assets/aistudio/image_f1a261de.png"
+              alt="UWU"
+              decoding="async"
+              class="hero-wordmark-img"
+            />
+          </div>
+        </div>
+
+        <!-- Roster Section with Central Hello Kitty Keepsake Deck -->
+        <section id="roster" aria-label="Collective Roster" class="roster-section">
+          <div id="dealer-deck" aria-hidden="true" class="dealer-deck">
+            <div class="dealer-deck-stack">
+              <div class="dealer-deck-layer dealer-deck-layer--back"></div>
+              <div class="dealer-deck-layer dealer-deck-layer--mid"></div>
+              <div class="dealer-deck-layer dealer-deck-layer--top">
+                <div class="dealer-deck-corners">
+                  <span>♥</span>
+                  <span>♥</span>
+                </div>
+                <div class="dealer-deck-emblem">
+                  <svg viewBox="0 0 64 40" class="deck-bow-svg" aria-hidden="true">
+                    <path
+                      d="M14,10 C8,4 4,14 8,24 C12,32 22,28 28,22 L28,14 C24,10 18,8 14,10 Z"
+                      fill="#e61e5a"
+                      stroke="#4a1829"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M50,10 C56,4 60,14 56,24 C52,32 42,28 36,22 L36,14 C40,10 46,8 50,10 Z"
+                      fill="#e61e5a"
+                      stroke="#4a1829"
+                      stroke-width="2"
+                    />
+                    <circle cx="32" cy="18" r="6" fill="#ff4d88" stroke="#4a1829" stroke-width="2" />
+                  </svg>
+                  <span class="dealer-deck-title">UWU</span>
+                </div>
+                <div class="dealer-deck-corners">
+                  <span>♥</span>
+                  <span>♥</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="roster-grid" class="roster-fan"></div>
+
+          <div id="fan-controls" class="fan-controls">
+            <div class="fan-controls-row">
+              <button
+                id="fan-prev-btn"
+                type="button"
+                aria-label="Pick previous card"
+                class="fan-step-btn"
+              >
+                ‹
+              </button>
+              <div class="fan-status-readout">
+                <span id="fan-counter" class="fan-counter tabular-nums">01 / 18</span>
+                <span class="fan-sep" aria-hidden="true">·</span>
+                <span id="fan-active-name" class="fan-active-name">Com</span>
+              </div>
+              <button
+                id="fan-next-btn"
+                type="button"
+                aria-label="Pick next card"
+                class="fan-step-btn"
+              >
+                ›
+              </button>
+            </div>
+
+            <div id="fan-pips" class="fan-pips" role="tablist" aria-label="Roster plates"></div>
+
+            <div class="fan-timer-track" aria-hidden="true">
+              <div id="fan-timer-fill" class="fan-timer-fill"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hall of Fame -->
+        <div class="sections-stack">
+          <section id="hall-of-fame" aria-labelledby="hall-of-fame-heading" class="scroll-section">
+            <div class="section-header">
+              <h2 id="hall-of-fame-heading" class="section-title">01. Hall of Fame</h2>
+              <p id="hall-of-fame-count" class="section-subtitle tabular-nums">
+                04 Honored Keepsake Cards · Click any card to inspect
+              </p>
+            </div>
+
+            <div id="hall-of-fame-grid" class="hof-grid"></div>
+          </section>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <span>© 2026 UWU RIBBON CLUB</span>
+          <div class="footer-links">
+            <button id="replay-intro-btn" type="button" class="footer-btn">Replay Intro</button>
+            <a href="#top" class="footer-link">Back to Top</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Member Keepsake Lightbox Modal -->
+    <div
+      id="member-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      class="modal-backdrop is-hidden"
+    >
+      <div id="modal-dialog" tabindex="-1" class="modal-dialog">
+        <div class="modal-header">
+          <div class="modal-header-left tabular-nums">
+            <span id="modal-plate-code" class="modal-plate-code">PLATE 01</span>
+            <span aria-hidden="true">/</span>
+            <span id="modal-counter">01 of 18</span>
+          </div>
+
+          <div class="modal-header-actions">
+            <span class="modal-nav-hint">← / → Navigate</span>
+            <button
+              id="modal-prev-btn"
+              type="button"
+              aria-label="Previous member (Left arrow)"
+              class="modal-icon-btn"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon-sm"
+                aria-hidden="true"
+              >
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              id="modal-next-btn"
+              type="button"
+              aria-label="Next member (Right arrow)"
+              class="modal-icon-btn"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon-sm"
+                aria-hidden="true"
+              >
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+            <button
+              id="modal-close-btn"
+              type="button"
+              aria-label="Close keepsake card (Escape)"
+              class="modal-icon-btn modal-icon-btn--close"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon-sm"
+                aria-hidden="true"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div id="modal-body" class="modal-body">
+          <div class="modal-media-col">
+            <div class="modal-portrait-shell">
+              <div id="modal-media-box" class="modal-portrait-frame"></div>
+            </div>
+          </div>
+
+          <div class="modal-info-col">
+            <div>
+              <div id="modal-meta-line" class="modal-meta-line"></div>
+              <h2 id="modal-title" class="modal-member-name"></h2>
+              <p id="modal-statement" class="modal-statement"></p>
+
+              <div id="modal-presence" class="modal-presence-wrap"></div>
+
+              <dl class="modal-specs">
+                <div class="modal-spec-row">
+                  <dt>Primary Medium</dt>
+                  <dd id="modal-medium"></dd>
+                </div>
+                <div class="modal-spec-row">
+                  <dt>Archive Handle</dt>
+                  <dd>
+                    <button id="modal-handle-btn" type="button" class="handle-copy-btn">
+                      <span id="modal-handle-text"></span>
+                      <span id="modal-handle-icon"></span>
+                    </button>
+                  </dd>
+                </div>
+                <div class="modal-spec-row">
+                  <dt>Tuning Reference</dt>
+                  <dd id="modal-tuning" class="tabular-nums"></dd>
+                </div>
+              </dl>
+
+              <div class="audio-study-card">
+                <div class="audio-study-top">
+                  <div class="audio-study-meta">
+                    <p class="audio-study-label">Music Box Study</p>
+                    <p id="modal-track-title" class="audio-study-title"></p>
+                  </div>
+
+                  <button id="modal-play-btn" type="button" class="audio-play-btn"></button>
+                </div>
+
+                <div class="audio-study-bar-row">
+                  <div class="audio-progress-track">
+                    <div id="modal-track-progress" class="audio-progress-fill"></div>
+                  </div>
+                  <span id="modal-track-time" class="audio-time tabular-nums">00:00 / 00:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- YouTube Background Music Host & Floating Hello Kitty Mini Player -->
+    <div id="yt-music-host" aria-hidden="true" class="yt-music-host"></div>
+
+    <aside id="music-player" aria-label="Background Music" class="music-player">
+      <button
+        id="music-toggle-btn"
+        type="button"
+        aria-label="Play background music"
+        class="music-toggle-btn"
+      >
+        <span id="music-toggle-icon" class="music-toggle-icon"></span>
+      </button>
+
+      <div class="music-meta">
+        <div class="music-title-row">
+          <span class="music-eq" aria-hidden="true">
+            <span class="music-eq-bar"></span>
+            <span class="music-eq-bar"></span>
+            <span class="music-eq-bar"></span>
+          </span>
+          <span id="music-title" class="music-title">UWU Ribbon Radio</span>
+        </div>
+        <span id="music-status" class="music-status">Click anywhere to play</span>
+      </div>
+
+      <label class="music-volume-wrap">
+        <span class="sr-only">Music volume</span>
+        <input
+          id="music-volume"
+          type="range"
+          min="0"
+          max="100"
+          step="1"
+          value="45"
+          class="kawaii-slider music-volume-slider"
+        />
+      </label>
+    </aside>
+
+    <!-- Cursor-Chasing Hello Kitty Chibi Cat -->
+    <div id="cursor-cat" aria-hidden="true" class="cursor-cat is-hidden">
+      <div id="cursor-cat-flip" class="cursor-cat-flip">
+        <svg viewBox="0 0 84 80" class="cursor-cat-svg">
+          <!-- Wagging Tail -->
+          <path
+            d="M18,56 C8,52 6,38 14,34"
+            fill="none"
+            stroke="#4a1829"
+            stroke-width="4.8"
+            stroke-linecap="round"
+            class="cat-tail"
+          />
+          <path
+            d="M18,56 C8,52 6,38 14,34"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2.2"
+            stroke-linecap="round"
+            class="cat-tail"
+          />
+          <!-- Cute Body & Berry-Pink Overalls -->
+          <ellipse cx="44" cy="57" rx="18" ry="14" fill="#ffffff" stroke="#4a1829" stroke-width="2.6" />
+          <path
+            d="M29,56 C30,66 36,70 44,70 C52,70 58,66 59,56 L55,51 L33,51 Z"
+            fill="#e61e5a"
+            stroke="#4a1829"
+            stroke-width="2.4"
+            stroke-linejoin="round"
+          />
+          <!-- Paws -->
+          <ellipse cx="34" cy="68" rx="5.5" ry="4" fill="#ffffff" stroke="#4a1829" stroke-width="2.4" class="cat-paw cat-paw--back" />
+          <ellipse cx="53" cy="68" rx="5.5" ry="4" fill="#ffffff" stroke="#4a1829" stroke-width="2.4" class="cat-paw cat-paw--front" />
+          <!-- Head & Kitty Ears -->
+          <path
+            d="M22,30 C20,16 28,11 36,20 C41,18 48,18 53,20 C61,11 69,16 67,30 C72,37 68,51 44.5,51 C21,51 17,37 22,30 Z"
+            fill="#ffffff"
+            stroke="#4a1829"
+            stroke-width="2.6"
+            stroke-linejoin="round"
+          />
+          <!-- Pink Inner Ears -->
+          <path d="M25,26 L28,17 L34,22 Z" fill="#ffd1e2" />
+          <path d="M64,26 L61,17 L55,22 Z" fill="#ffd1e2" />
+          <!-- Blinking Eyes -->
+          <g class="cat-eyes">
+            <ellipse cx="36" cy="36" rx="2.3" ry="3" fill="#4a1829" />
+            <ellipse cx="54" cy="36" rx="2.3" ry="3" fill="#4a1829" />
+          </g>
+          <!-- Rosy Cheeks -->
+          <ellipse cx="29" cy="40" rx="3.8" ry="2.1" fill="#ff9bc0" opacity="0.72" />
+          <ellipse cx="60" cy="40" rx="3.8" ry="2.1" fill="#ff9bc0" opacity="0.72" />
+          <!-- Golden Nose -->
+          <ellipse cx="45" cy="39" rx="2.8" ry="2" fill="#f5b82e" stroke="#4a1829" stroke-width="1.6" />
+          <!-- Whiskers -->
+          <g stroke="#4a1829" stroke-width="1.7" stroke-linecap="round">
+            <line x1="14" y1="34" x2="22" y2="36" />
+            <line x1="13" y1="40" x2="22" y2="40" />
+            <line x1="67" y1="36" x2="75" y2="34" />
+            <line x1="67" y1="40" x2="76" y2="40" />
+          </g>
+          <!-- Iconic Hello Kitty Bow -->
+          <g transform="translate(59, 20) rotate(18)">
+            <path d="M-9,-4 C-12,-7 -13,-2 -11,3 C-9,7 -4,6 -2,3 L-2,-2 C-4,-5 -7,-6 -9,-4 Z" fill="#e61e5a" stroke="#4a1829" stroke-width="1.8" />
+            <path d="M9,-4 C12,-7 13,-2 11,3 C9,7 4,6 2,3 L2,-2 C4,-5 7,-6 9,-4 Z" fill="#e61e5a" stroke="#4a1829" stroke-width="1.8" />
+            <circle cx="0" cy="0" r="3.2" fill="#ff4d88" stroke="#4a1829" stroke-width="1.8" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>

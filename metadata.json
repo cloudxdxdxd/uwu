@@ -1,0 +1,8 @@
+{
+  "name": "Remix ROTHSCHILD",
+  "description": "Darkroom collective roster, silver-gelatin portrait gallery, and interactive ambient archive.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
